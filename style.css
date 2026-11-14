@@ -7,3 +7,16 @@
 .whatsapp-float:hover{transform:translateY(-4px);box-shadow:0 14px 32px #10251c4a;background:#117847}
 .whatsapp-float svg{width:23px;height:23px;flex:none}
 @media(max-width:700px){.whatsapp-float{right:16px;bottom:16px;padding:12px 16px 12px 12px;font-size:11px}.whatsapp-float svg{width:21px;height:21px}}
+
+/* Refined alternating scroll transitions */
+.js-motion .scroll-motion{opacity:0;will-change:opacity,transform;transition:opacity .85s cubic-bezier(.2,.7,.2,1),transform .95s cubic-bezier(.2,.7,.2,1);transition-delay:var(--motion-delay,0ms)}
+.js-motion .scroll-motion[data-motion-direction="up"]{transform:translate3d(0,58px,0)}
+.js-motion .scroll-motion[data-motion-direction="down"]{transform:translate3d(0,-58px,0)}
+.js-motion .scroll-motion.motion-visible{opacity:1;transform:translate3d(0,0,0)}
+.js-motion .service-card:nth-child(odd){transition-delay:120ms}
+.js-motion .service-card:nth-child(even){transition-delay:240ms}
+.js-motion .steps article:nth-child(odd){transform:translate3d(0,42px,0)}
+.js-motion .steps article:nth-child(even){transform:translate3d(0,-42px,0)}
+.js-motion .feature-image{transition-delay:100ms}
+.js-motion .feature-copy{transition-delay:220ms}
+@media(prefers-reduced-motion:reduce){.js-motion .scroll-motion,.js-motion .scroll-motion[data-motion-direction],.js-motion .steps article{opacity:1!important;transform:none!important;transition:none!important;will-change:auto}}
